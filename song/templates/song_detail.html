@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ song.title }}</title>
+</head>
+<body>
+    <h1>{{ song.title }}</h1>
+    <p>Artist: {{ song.artist }}</p>
+    <p>Album: {{ song.album }}</p>
+    <p>Release Date: {{ song.release_date }}</p>
+    <p>Created at: {{ song.created_at }}</p>
+    <p>Updated at: {{ song.updated_at }}</p>
+    <a href="{% url 'song_update' song.pk %}">Edit</a>
+    <a href="{% url 'song_delete' song.pk %}">Delete</a>
+    <a href="{% url 'song_list' %}">Back to List</a>
+</body>
+</html>

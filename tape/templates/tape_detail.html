@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ tape.title }}</title>
+</head>
+<body>
+    <h1>{{ tape.title }}</h1>
+    <p>{{ tape.description }}</p>
+    <p>Created at: {{ tape.created_at }}</p>
+    <p>Updated at: {{ tape.updated_at }}</p>
+    <a href="{% url 'tape_update' tape.pk %}">Edit</a>
+    <a href="{% url 'tape_delete' tape.pk %}">Delete</a>
+    <a href="{% url 'tape_list' %}">Back to List</a>
+</body>
+</html>
