@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Tape
 from .forms import TapeForm
 
+def home(request):
+    return render(request, 'home.html')
+
 def tape_list(request):
     tapes = Tape.objects.all()
     return render(request, 'tape/tape_list.html', {'tapes': tapes})

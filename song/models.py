@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 
 # Create your models here.
 class Song(models.Model):
@@ -7,7 +6,7 @@ class Song(models.Model):
     artist = models.CharField(max_length=100)
     album = models.CharField(max_length=100, blank=True, null=True)
     release_date = models.DateField()
-    tape = models.ForeignKey(Tape, on_delete=models.CASCADE, related_name='songs')
+    tape = models.ForeignKey('tape.Tape', on_delete=models.CASCADE, related_name='songs')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
