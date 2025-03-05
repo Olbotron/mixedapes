@@ -1,12 +1,13 @@
 from django.db import models
+from tape.models import Tape  # Add this import
 
 # Create your models here.
-from django.db import models
-
-class Tape(models.Model):
+class Song(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tapes')
+    artist = models.CharField(max_length=100)
+    album = models.CharField(max_length=100, blank=True, null=True)
+    release_date = models.DateField()
+    tape = models.ForeignKey(Tape, on_delete=models.CASCADE, related_name='songs')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
