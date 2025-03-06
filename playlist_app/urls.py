@@ -23,4 +23,5 @@ urlpatterns = [
     path('', tape_views.home, name='home'),
     path('tapes/', include('tape.urls')),
     path('songs/', include('song.urls')),
+    path('users/', include('user.urls')),
 ]

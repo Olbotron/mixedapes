@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+playlist_app-corrupted/*
+UNUSED-mixedapes/*
+
+
 # Distribution / packaging
 .Python
 build/

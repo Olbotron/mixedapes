@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Songs from Tape</title>
+</head>
+<body>
+    <h1>Delete Songs from {{ tape.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete Selected Songs</button>
+    </form>
+    <a href="{% url 'tape_detail' tape.pk %}">Back to Tape</a>
+</body>
+</html>

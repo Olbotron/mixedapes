@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Songs to Tape</title>
+</head>
+<body>
+    <h1>Add Songs to {{ tape.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form.as_p }}
+        {% endfor %}
+        <button type="submit">Add Songs</button>
+    </form>
+    <a href="{% url 'tape_detail' tape.pk %}">Back to Tape</a>
+</body>
+</html>
