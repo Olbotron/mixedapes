@@ -21,6 +21,8 @@ TEMPLATES = [
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
+
 SECRET_KEY = 'your-secret-key'
 DEBUG = True
 ALLOWED_HOSTS = []

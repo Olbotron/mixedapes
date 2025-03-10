@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Tape
 from .forms import TapeForm, AddSongToTapeFormSet, DeleteSongsFromTapeForm
+from django.contrib.auth.decorators import login_required
 from song.models import Song
 
 def home(request):
@@ -14,18 +15,24 @@ def tape_detail(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
     return render(request, 'tape/tape_detail.html', {'tape': tape})
 
+@login_required
 def tape_create(request):
     if request.method == 'POST':
         form = TapeForm(request.POST)
         if form.is_valid():
-            form.save()
+            tape = form.save(commit=False)
+            tape.user = request.user  # Set the user field
+            tape.save()
             return redirect('tape_list')
     else:
         form = TapeForm()
     return render(request, 'tape/tape_form.html', {'form': form})
 
+@login_required
 def tape_update(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
+    if tape.user != request.user:
+        return redirect('tape_list')  # Redirect if the user is not the owner
     if request.method == 'POST':
         form = TapeForm(request.POST, instance=tape)
         if form.is_valid():
@@ -35,15 +42,21 @@ def tape_update(request, pk):
         form = TapeForm(instance=tape)
     return render(request, 'tape/tape_form.html', {'form': form})
 
+@login_required
 def tape_delete(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
+    if tape.user != request.user:
+        return redirect('tape_list')  # Redirect if the user is not the owner
     if request.method == 'POST':
         tape.delete()
         return redirect('tape_list')
     return render(request, 'tape/tape_confirm_delete.html', {'tape': tape})
 
+@login_required
 def add_song_to_tape(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
+    if tape.user != request.user:
+        return redirect('tape_list')  # Redirect if the user is not the owner
     if request.method == 'POST':
         formset = AddSongToTapeFormSet(request.POST)
         if formset.is_valid():
@@ -57,8 +70,11 @@ def add_song_to_tape(request, pk):
         formset = AddSongToTapeFormSet()
     return render(request, 'tape/add_song_to_tape.html', {'formset': formset, 'tape': tape})
 
+@login_required
 def delete_songs_from_tape(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
+    if tape.user != request.user:
+        return redirect('tape_list')  # Redirect if the user is not the owner
     if request.method == 'POST':
         form = DeleteSongsFromTapeForm(request.POST, tape=tape)
         if form.is_valid():

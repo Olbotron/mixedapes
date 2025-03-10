@@ -31,8 +31,20 @@ em {
 }
 
 ul li{
-    padding-top: 8px;
-    padding-bottom: 4px;
+    padding: 8px;
+}
+
+/* Set background color for odd and even <li> items */
+ul li:nth-child(odd) {
+    background-color: #efedeb; /* Color for odd items */
+}
+
+ul li:nth-child(even) {
+    background-color: #eee3c9; /* Color for even items */
+}
+
+span.login-logout{
+    color: #eeddb1;
 }
 
 :root {

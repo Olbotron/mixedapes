@@ -19,12 +19,19 @@
                     <a href="booking.php?ap=5" class="dropdown-item <?=isActive(5)?>">Make Friends</a>
                     <a href="team.php?ap=6" class="dropdown-item <?=isActive(6)?>">Dating</a>
                 </div>
+
+                {% if user.is_authenticated %}
+                    <span class="login-logout">Welcome, {{ user.username }}!
+                    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">Logout</button>
+                    </form>
+                    </span>
+                {% else %}
+                    <span class="login-logout"><a href="{% url 'login' %}">Login</a> |
+                    <a href="{% url 'register' %}">Register</a></span>
+                {% endif %}
             </div>
-            <a href="contact.php?ap=7" class="nav-item nav-link <?=isActive($thisID)?>">Contact</a>
         </div>
     </div>
 </nav>
-
-{% comment %} <div class="position-relative p-0">
-   
-</div {% endcomment %}
