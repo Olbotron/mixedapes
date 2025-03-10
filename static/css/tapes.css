@@ -43,7 +43,11 @@ ul li{
 
 img.header-tape{
     height: 100px;
-    border: white 2px solid;
+}
+
+img.logo{
+    border-radius: 360px;
+    max-height: 70vh;
 }
 
 .ff-secondary {
@@ -121,7 +125,12 @@ img.header-tape{
 }
 
 /*** Navbar ***/
-.navbar-dark .navbar-nav .nav-link {
+navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
+    background-color: #000000;
+}
+
+.navbar-black .navbar-nav .nav-link {
+    background-color: #000000;
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
@@ -133,59 +142,23 @@ img.header-tape{
     transition: .5s;
 }
 
-.sticky-top.navbar-dark .navbar-nav .nav-link {
+.sticky-top.navbar-black .navbar-nav .nav-link {
     padding: 20px 0;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover,
-.navbar-dark .navbar-nav .nav-link.active {
+.navbar-black .navbar-nav .nav-link:hover,
+.navbar-black .navbar-nav .nav-link.active, 
+.navbar-toggler, .fa-bars {
     color: var(--primary) !important;
 }
 
-.navbar-dark .navbar-brand img {
-    max-height: 60px;
+.navbar-black .navbar-brand img {
+    max-height: 100px;
     transition: .5s;
 }
 
-.sticky-top.navbar-dark .navbar-brand img {
-    max-height: 45px;
-}
-
-@media (max-width: 991.98px) {
-    .sticky-top.navbar-dark {
-        position: relative;
-    }
-
-    .navbar-dark .navbar-collapse {
-        margin-top: 15px;
-        border-top: 1px solid rgba(255, 255, 255, .1)
-    }
-
-    .navbar-dark .navbar-nav .nav-link,
-    .sticky-top.navbar-dark .navbar-nav .nav-link {
-        padding: 10px 0;
-        margin-left: 0;
-    }
-
-    .navbar-dark .navbar-brand img {
-        max-height: 45px;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar-dark {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        background: transparent !important;
-    }
-    
-    .sticky-top.navbar-dark {
-        position: fixed;
-        background: var(--dark) !important;
-    }
+.sticky-top.navbar-black .navbar-brand img {
+    max-height: 100px;
 }
 
 /*** Hero Header ***/
@@ -263,6 +236,19 @@ img.header-tape{
     color: var(--light) !important;
 }
 
+.button-link{
+    font-weight: bold;
+    background-color: #0F172B;
+    color: var(--primary);
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.button-link:hover, .button-link:focus, .button-link:active{
+    background-color: var(--primary);
+    color: #0F172B;
+}
 
 /*** Food Menu ***/
 .nav-pills .nav-item .active {

@@ -3,16 +3,7 @@
 {% block title %}Tape List{% endblock %}
 
 {% block content %}
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tape List</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/tapes.css' %}">
-</head>
-<body> -->
+<div class="container">
     <h1>Tape List</h1>
     <ul>
         {% for tape in tapes %}
@@ -24,15 +15,15 @@
                             <em>{{ song.artist }}</em></li>
                     {% endfor %}
                     <br>
-                    <a href="{% url 'add_song_to_tape' tape.pk %}">Add Songs</a>
-                    <a href="{% url 'delete_songs_from_tape' tape.pk %}">Delete Songs</a>
-                    <a href="{% url 'tape_update' tape.pk %}">Edit</a><br>
+                    <a class="button-link" href="{% url 'add_song_to_tape' tape.pk %}">Add Songs</a>
+                    <a class="button-link" href="{% url 'delete_songs_from_tape' tape.pk %}">Delete Songs</a>
+                    <a class="button-link" href="{% url 'tape_update' tape.pk %}">Edit</a><br>
                     <br>
                 </ul><br>
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'tape_create' %}">Create New Tape</a>
+    <a class="button-link" href="{% url 'tape_create' %}">Create New Tape</a>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var toggleButtons = document.querySelectorAll('.toggle-button');
@@ -44,6 +35,5 @@
             });
         });
     </script>
-</body>
-</html>
+</div>
 {% endblock %}

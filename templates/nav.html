@@ -1,26 +1,30 @@
-{% load static %}
-<div class="position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-        <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><img src="{% static 'images/cassette2.png' %}" class="header-tape" alt="Cassette" /> Mixed Apes</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 pe-4">
-                <a href="index.php?ap=1" class="nav-item nav-link <?=isActive(1)?>">Home</a>
-                <a href="about.php?ap=2" class="nav-item nav-link <?=isActive(2)?>">About</a>
-                <a href="playlists.php?ap=3" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
-                <a href="/forum/index.php?ap=4" class="nav-item nav-link <?=isActive(4)?>"></a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Socialise</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="booking.php?ap=5" class="dropdown-item <?=isActive(5)?>">Make Friends</a>
-                        <a href="team.php?ap=6" class="dropdown-item <?=isActive(6)?>">Dating</a>
-                    </div>
+{% load static %} 
+
+<nav class="navbar navbar-expand-lg navbar-black px-4 px-lg-5 py-3 py-lg-0">
+    <a href="" class="navbar-brand p-0">
+        <h1 class="text-primary m-0"><img src="{% static 'images/mixed-apes-logo.webp' %}" class="header-tape" alt="Cassette" /> Mixed Apes</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0 pe-4">
+            <a href="{% url 'home' %}" class="nav-item nav-link <?=isActive(1)?>">Home</a>
+            <a href="about.php?ap=2" class="nav-item nav-link <?=isActive(2)?>">About</a>
+            <a href="playlists.php?ap=3" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
+            <a href="/forum/index.php?ap=4" class="nav-item nav-link <?=isActive(4)?>"></a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Socialise</a>
+                <div class="dropdown-menu m-0">
+                    <a href="booking.php?ap=5" class="dropdown-item <?=isActive(5)?>">Make Friends</a>
+                    <a href="team.php?ap=6" class="dropdown-item <?=isActive(6)?>">Dating</a>
                 </div>
-                <a href="contact.php?ap=7" class="nav-item nav-link <?=isActive($thisID)?>">Contact</a>
             </div>
+            <a href="contact.php?ap=7" class="nav-item nav-link <?=isActive($thisID)?>">Contact</a>
         </div>
-    </nav>
+    </div>
+</nav>
+
+{% comment %} <div class="position-relative p-0">
+   
+</div {% endcomment %}
