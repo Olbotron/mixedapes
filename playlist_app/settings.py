@@ -1,4 +1,8 @@
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,8 +27,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
 
-SECRET_KEY = 'your-secret-key'
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
+DEBUG = False
 ALLOWED_HOSTS = []
 
 # Crispy Forms settings
