@@ -30,7 +30,7 @@ LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after log
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mixedapes-e0c1f0719094.herokuapp.com/']
 
 # Crispy Forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
