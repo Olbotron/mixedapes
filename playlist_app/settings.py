@@ -24,6 +24,7 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Add this line
 
 LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
 
