@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tape Form</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Tape Form</h1>
     <form method="post">
         {% csrf_token %}
@@ -11,5 +8,4 @@
         <button type="submit">Save</button>
     </form>
     <a href="{% url 'tape_list' %}">Cancel</a>
-</body>
-</html>
+{% endblock %}

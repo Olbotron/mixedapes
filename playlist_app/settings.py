@@ -24,13 +24,19 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Add this line
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Amended this line from staticfiles to static
 
 LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
-DEBUG = False
-ALLOWED_HOSTS = ['https://mixedapes-e0c1f0719094.herokuapp.com/']
+DEBUG = True
+ALLOWED_HOSTS = ['mixedapes-e0c1f0719094.herokuapp.com/',
+    '127.0.0.1', 
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://kit.fontawesome.com",
+]
 
 # Crispy Forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

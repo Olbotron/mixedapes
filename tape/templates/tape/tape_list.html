@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Tape List{% endblock %}
 
@@ -8,7 +9,8 @@
     <ul>
         {% for tape in tapes %}
             <li>
-                <span class="toggle-button">{{ tape.title }} : <span class="description">{{ tape.description }}</span></span>
+                <span class="toggle-button">{{ tape.title }} : <span class="description">{{ tape.description }}</span></span><br>
+                <span class="created_by">Created by {{ tape.user.username }}</span>
                 <ul class="toggle-content">
                     {% for song in tape.songs.all %}
                         <li><strong>{{ song.title }}</strong><br>
@@ -30,7 +32,12 @@
             toggleButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     var content = this.nextElementSibling;
-                    content.classList.toggle('open');
+                    while (content && !content.classList.contains('toggle-content')) {
+                        content = content.nextElementSibling;
+                    }
+                    if (content) {
+                        content.classList.toggle('open');
+                    }
                 });
             });
         });

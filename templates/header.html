@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +26,10 @@
     <script src="https://kit.fontawesome.com/7b78a08149.js" crossorigin="anonymous"></script>
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    {% comment %} <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
- 
+  {% endcomment %}
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
@@ -58,8 +58,10 @@
         </script>
         <!-- Spinner End -->
 
-
-
         <!-- Navbar & Hero Start -->
         {% include 'nav.html' %}
         <!-- Navbar & Hero End -->
+
+        <!-- Include jQuery before other js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
