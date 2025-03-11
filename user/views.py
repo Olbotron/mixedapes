@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirect to login page after successful registration
+            user = form.save()
+            login(request, user)
+            return redirect('tape_list')  # Redirect to the tape list page after successful registration
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'user/register.html', {'form': form})
 
 @login_required
