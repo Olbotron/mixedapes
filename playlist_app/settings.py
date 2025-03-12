@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 # Load environment variables from .env file
 load_dotenv()
@@ -69,11 +70,15 @@ ROOT_URLCONF = 'playlist_app.urls'
 
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+} """
+
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost')
 }
 
 AUTH_PASSWORD_VALIDATORS = [
