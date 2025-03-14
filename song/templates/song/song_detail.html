@@ -7,8 +7,6 @@
     <h1>{{ song.title }}</h1>
     <p>Artist: {{ song.artist }}</p>
     <p>Album: {{ song.album }}</p>
-    <p>Created at: {{ song.created_at }}</p>
-    <p>Updated at: {{ song.updated_at }}</p>
     <a href="{% url 'edit_song' song.pk %}">Edit</a>
     <a href="{% url 'song_delete' song.pk %}">Delete</a>
     <a href="{% url 'song_list' %}">Back to List</a>

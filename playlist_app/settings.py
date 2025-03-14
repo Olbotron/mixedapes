@@ -28,6 +28,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Amended this line from staticfiles to static
 
 LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
 DEBUG = True
@@ -70,16 +71,16 @@ ROOT_URLCONF = 'playlist_app.urls'
 
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-} """
-
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
 }
+
+""" DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost')
+} """
 
 AUTH_PASSWORD_VALIDATORS = [
     {

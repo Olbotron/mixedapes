@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Songs to Tape</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add Songs to {{ tape.title }}{% endblock %}
+
+{% block content %}
     <h1>Add Songs to {{ tape.title }}</h1>
     <form method="post">
         {% csrf_token %}
@@ -15,5 +14,4 @@
         <button type="submit">Add Songs</button>
     </form>
     <a href="{% url 'tape_detail' tape.pk %}">Back to Tape</a>
-</body>
-</html>
+{% endblock %}

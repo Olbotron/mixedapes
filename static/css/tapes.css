@@ -3,12 +3,13 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 strong {
-    color: orange;
-    font-size: larger;
+    color: rgb(237, 159, 16);
+    font-size: 1.4rem;
 }
 em {
+    font-size: 1.2rem;
     font-style: normal;
-    color: #827b7b;
+    color: #3e3e3e;
 }
 .toggle-content {
     display: none;
@@ -25,26 +26,48 @@ em {
     margin-bottom: 10px;
 }
 .description{
-    color: #827b7b;
-    font-size: smaller;
-    font-weight: normal;
+    color: #056e1d;
+    font-weight: bold;
+}
+
+.created_by{
+    color: #000000;
+    font-weight: bold;
+}
+
+span.login-logout, span.login-logout a{
+    color: #eeddb1;
+    font-weight: bold;
+}
+
+span.login-logout a:hover{
+    color:#e7aa0f;
 }
 
 ul li{
-    padding: 8px;
+    padding: 12px;
 }
 
 /* Set background color for odd and even <li> items */
 ul li:nth-child(odd) {
-    background-color: #efedeb; /* Color for odd items */
+    background-color: #fcf9f5; /* Color for odd items */
 }
 
 ul li:nth-child(even) {
-    background-color: #eee3c9; /* Color for even items */
+    background-color: #efe8d8; /* Color for even items */
 }
 
-span.login-logout{
-    color: #eeddb1;
+.song-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.album-art{
+    display: block;
+}
+
+.song-info{
+    padding-left: 12px;
 }
 
 :root {
@@ -59,7 +82,7 @@ img.header-tape{
 
 img.logo{
     border-radius: 360px;
-    max-height: 70vh;
+    max-height: 50vh;
 }
 
 .ff-secondary {
@@ -251,7 +274,7 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
 .button-link{
     font-weight: bold;
     background-color: #0F172B;
-    color: var(--primary);
+    color: #efe8d8;
     padding: 8px;
     border-radius: 4px;
     text-decoration: none;

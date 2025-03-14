@@ -13,8 +13,14 @@
                 <span class="created_by">Created by {{ tape.user.username }}</span>
                 <ul class="toggle-content">
                     {% for song in tape.songs.all %}
-                        <li><strong>{{ song.title }}</strong><br>
-                            <em>{{ song.artist }}</em></li>
+                        <li><dspan class="song-div">
+                                <span class="album-art"><img src="{{ song.album_art_url }}" alt="{{ song.title }} album art" width="100" height="100"></span>
+                                <span class="song-info">
+                                    <strong>{{ song.title }}</strong><br>
+                                    <em>{{ song.artist }}</em></li>
+                                </span>
+                            </span>
+                        </li>
                     {% endfor %}
                     <br>
                     {% if tape.user == request.user %}

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Song Form</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Song Form{% endblock %}
     <h1>Song Form</h1>
     <form method="post">
         {% csrf_token %}
@@ -11,5 +9,18 @@
         <button type="submit">Save</button>
     </form>
     <a href="{% url 'song_list' %}">Cancel</a>
-</body>
-</html>
+
+    <h2>All Songs</h2>
+    {% for tape in tapes %}
+        <h3>{{ tape.title }}</h3>
+        <ul>
+            {% for song in tape.songs.all %}
+                <li>
+                    {{ song.title }} by {{ song.artist }}
+                    <a href="{% url 'song_update' song.pk %}">Edit</a>
+                    <a href="{% url 'song_delete' song.pk %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

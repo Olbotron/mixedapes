@@ -9,6 +9,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0 pe-4">
+            {% if user.is_authenticated %}
+                    <span class="login-logout">Welcome, {{ user.username }}!
+                    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">Logout</button>
+                    </form>
+                    </span>
+                {% else %}
+                    <span class="login-logout"><a href="{% url 'login' %}">Login</a> |
+                    <a href="{% url 'register' %}">Register</a></span>
+                {% endif %}
             <a href="{% url 'home' %}" class="nav-item nav-link <?=isActive(1)?>">Home</a>
             <a href="about.php?ap=2" class="nav-item nav-link <?=isActive(2)?>">About</a>
             <a href="playlists.php?ap=3" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
@@ -20,17 +31,7 @@
                     <a href="team.php?ap=6" class="dropdown-item <?=isActive(6)?>">Dating</a>
                 </div>
 
-                {% if user.is_authenticated %}
-                    <span class="login-logout">Welcome, {{ user.username }}!
-                    <form method="post" action="{% url 'logout' %}" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">Logout</button>
-                    </form>
-                    </span>
-                {% else %}
-                    <span class="login-logout"><a href="{% url 'login' %}">Login</a> |
-                    <a href="{% url 'register' %}">Register</a></span>
-                {% endif %}
+                
             </div>
         </div>
     </div>

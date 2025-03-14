@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Delete Songs from Tape</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Songs from tape{% endblock %}
+
+{% block content %}
     <h1>Delete Songs from {{ tape.title }}</h1>
     <form method="post">
         {% csrf_token %}
@@ -11,5 +11,4 @@
         <button type="submit">Delete Selected Songs</button>
     </form>
     <a href="{% url 'tape_list' %}">Back to Tapes</a>
-</body>
-</html>
+{% endblock %}
