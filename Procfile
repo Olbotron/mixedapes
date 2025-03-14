@@ -1,1 +1,1 @@
-web: gunicorn mixedapes.wsgi
+web: gunicorn playlist_app.wsgi
