@@ -26,19 +26,19 @@ TEMPLATES = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+## Simplified static file serving.
+## https://warehouse.python.org/project/whitenoise/
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#STATIC_URL = '/static/'
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Amended this line from staticfiles to static
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Amended this line from staticfiles to static
 
 LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['mixedapes-e0c1f0719094.herokuapp.com',
     '127.0.0.1', 
 ]
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'crispy_bootstrap4',  # Add crispy_bootstrap4 to installed apps
+    'crispy_bootstrap4',  # Add crispy_bootstrap4 for forms
     'tape',
     'song',
     'user',
@@ -79,16 +79,16 @@ ROOT_URLCONF = 'playlist_app.urls'
 
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
-""" DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-} """
-
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
 }
+
+""" DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost')
+} """
 
 AUTH_PASSWORD_VALIDATORS = [
     {

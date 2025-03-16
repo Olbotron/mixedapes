@@ -1,14 +1,23 @@
 (function ($) {
     "use strict";
 
+    $(document).ready(function() {
+        // Toggle functionality for ul li items
+        $('ul li').click(function() {
+            $(this).toggleClass('active');
+        });
+    
+        // Other JavaScript code...
+    });
+
     // Spinner
-    var spinner = function () {
+    function spinner() {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
         }, 1);
-    };
+    }
     spinner();
     
     
