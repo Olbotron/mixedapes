@@ -38,7 +38,7 @@ LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after log
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['mixedapes-e0c1f0719094.herokuapp.com',
     '127.0.0.1', 
 ]
