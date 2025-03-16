@@ -4,6 +4,9 @@ A place to share mix tapes of favourite playlists.
 ## Wireframe
 ![wireframe image of project](static/images/mixedapes-wireframe.png)
 
+## Entity Relationship Diagram
+![Entity Relationshio Diagram](staticfiles/images/mixedapes-ERD.webp)
+
 ## Project Board
 [Kanban board][1]
 
