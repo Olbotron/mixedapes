@@ -1,5 +1,5 @@
-# mixedapes
-A place to share mix tapes of favourite playlists
+# Mixed-Apes
+A place to share mix tapes of favourite playlists.
 
 ## Wireframe
 ![wireframe image of project](static/images/mixedapes-wireframe.png)
@@ -22,6 +22,8 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 
 5. Documentation
 
+[🔼 Back to top](#mixed-apes)
+
 ---
 
 **LO2 Develop and Implement a data model, application features and business logic to manage data in a real-world domain**
@@ -34,6 +36,8 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 
 4. Form validation
 
+[🔼 Back to top](#mixed-apes)
+
 ---
 
 **LO3 Authorisation and Authentication Permissions**
@@ -43,6 +47,8 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 2. Reflect login state
 
 3. Access control
+
+[🔼 Back to top](#mixed-apes)
 
 ---
 
@@ -54,6 +60,8 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 
 3. Testing documentation
 
+[🔼 Back to top](#mixed-apes)
+
 ---
 
 **LO5 Version control and Repository Hosting**
@@ -61,6 +69,10 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 1. Version control with Git and GitHub
 
 2. Secure code management
+
+[🔼 Back to top](#mixed-apes)
+
+---
 
 **LO6 Deploy to cloud based platform**
 
@@ -70,9 +82,17 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 
 3. Ensure the security in deployment: No sensitive data, no Passwords and Debug set to False
 
+[🔼 Back to top](#mixed-apes)
+
+---
+
 **LO7 Design and Implement custom data models**
 
 1. Design and Implement a custom data model
+
+[🔼 Back to top](#mixed-apes)
+
+---
 
 **LO8 Leverage AI tools to orchestrate the software Development Phase**
 
@@ -85,6 +105,9 @@ A user-friendly interface with consistent styles and adherence to wireframes/moc
 4. Use AI tools to create automated tests
 
 5. Reflect on AI's role in the development process and impact on workflow.
+
+[🔼 Back to top](#mixed-apes)
+
 ---
 
 [1]: https://github.com/users/Olbotron/projects/7
