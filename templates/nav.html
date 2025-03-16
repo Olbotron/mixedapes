@@ -21,17 +21,15 @@
                     <a href="{% url 'register' %}">Register</a></span>
                 {% endif %}
             <a href="{% url 'home' %}" class="nav-item nav-link <?=isActive(1)?>">Home</a>
-            <a href="about.php?ap=2" class="nav-item nav-link <?=isActive(2)?>">About</a>
-            <a href="playlists.php?ap=3" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
-            <a href="/forum/index.php?ap=4" class="nav-item nav-link <?=isActive(4)?>"></a>
+            <a href="#" class="nav-item nav-link <?=isActive(2)?>">About</a>
+            <a href="/tapes" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
+            <a href="#" class="nav-item nav-link <?=isActive(4)?>"></a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Socialise</a>
                 <div class="dropdown-menu m-0">
-                    <a href="booking.php?ap=5" class="dropdown-item <?=isActive(5)?>">Make Friends</a>
-                    <a href="team.php?ap=6" class="dropdown-item <?=isActive(6)?>">Dating</a>
+                    <a href="#" class="dropdown-item <?=isActive(5)?>">Make Friends</a>
+                    <a href="#" class="dropdown-item <?=isActive(6)?>">Dating</a>
                 </div>
-
-                
             </div>
         </div>
     </div>
