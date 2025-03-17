@@ -9,7 +9,7 @@ def home(request):
 
 def tape_list(request):
     tapes = Tape.objects.all()
-    return render(request, 'tape/tape_list.html', {'tapes': tapes})
+    return render(request, 'tape/tape_list.html', {'tape': tapes})
 
 def tape_detail(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
