@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Tape
 from song.models import Song
-from .forms import AddSongForm, EditSongForm, DeleteSongsForm
+from .forms import TapeForm, AddSongForm, EditSongForm, DeleteSongsForm
 
 def home(request):
     return render(request, 'tape/home.html')
