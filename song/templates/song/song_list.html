@@ -4,18 +4,17 @@
 {% block title %}Song List{% endblock %}
 
 {% block content %}
+<div class="container">
     <h1>Song List</h1>
+    <ul>
+        {% for song in songs %}
+            <li>
+                {{ song.title }} by {{ song.artist }}
+                <a href="{% url 'song_update' song.pk %}">Edit</a>
+                <a href="{% url 'song_delete' song.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
     <a href="{% url 'song_create' %}">Add New Song</a>
-    {% for tape in tapes %}
-        <h2>{{ tape.title }}</h2>
-        <ul>
-            {% for song in tape.songs.all %}
-                <li><img src="{{ song.album_art_url }}" alt="{{ song.title }} album art" width="50" height="50">
-                    <a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a>
-                    <a href="{% url 'song_update' song.pk %}">Edit</a>
-                    <a href="{% url 'song_delete' song.pk %}">Delete</a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
+</div>
 {% endblock %}

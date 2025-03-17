@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Confirm Delete</title>
-</head>
-<body>
-    <h1>Confirm Delete</h1>
-    <p>Are you sure you want to delete the song "{{ song.title }}" by "{{ song.artist }}"?</p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Delete Song{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Song</h1>
+    <p>Are you sure you want to delete "{{ song.title }}" by "{{ song.artist }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Yes, delete</button>
+        <button type="submit">Delete</button>
     </form>
-    <a href="{% url 'song_detail' song.pk %}">Cancel</a>
-</body>
-</html>
+    <a href="{% url 'song_list' %}">Cancel</a>
+</div>
+{% endblock %}
