@@ -87,7 +87,8 @@ def delete_songs_from_tape(request, pk):
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Tape, Song
+from .models import Tape
+from song.models import Song
 from .forms import AddSongForm, EditSongForm, DeleteSongsForm
 
 @login_required
