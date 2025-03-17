@@ -85,7 +85,7 @@ def delete_songs_from_tape(request, pk):
         form = DeleteSongsFromTapeForm(tape=tape)
     return render(request, 'tape/delete_songs_from_tape.html', {'form': form, 'tape': tape}) """
 
-    from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Tape, Song
 from .forms import AddSongForm, EditSongForm, DeleteSongsForm
