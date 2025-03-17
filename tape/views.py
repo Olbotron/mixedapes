@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+""" from django.shortcuts import render, get_object_or_404, redirect
 from .models import Tape
 from .forms import TapeForm, AddSongToTapeFormSet, DeleteSongsFromTapeForm
 from django.contrib.auth.decorators import login_required
@@ -83,4 +83,49 @@ def delete_songs_from_tape(request, pk):
             return redirect('tape_detail', pk=tape.pk)
     else:
         form = DeleteSongsFromTapeForm(tape=tape)
+    return render(request, 'tape/delete_songs_from_tape.html', {'form': form, 'tape': tape}) """
+
+    from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Tape, Song
+from .forms import AddSongForm, EditSongForm, DeleteSongsForm
+
+@login_required
+def add_song_to_tape(request, pk):
+    tape = get_object_or_404(Tape, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = AddSongForm(request.POST)
+        if form.is_valid():
+            song = form.save(commit=False)
+            song.tape = tape
+            song.user = request.user
+            song.save()
+            return redirect('tape_detail', pk=tape.pk)
+    else:
+        form = AddSongForm()
+    return render(request, 'tape/add_song_to_tape.html', {'form': form, 'tape': tape})
+
+@login_required
+def edit_song(request, pk):
+    song = get_object_or_404(Song, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = EditSongForm(request.POST, instance=song)
+        if form.is_valid():
+            form.save()
+            return redirect('tape_detail', pk=song.tape.pk)
+    else:
+        form = EditSongForm(instance=song)
+    return render(request, 'tape/edit_song.html', {'form': form, 'song': song})
+
+@login_required
+def delete_songs_from_tape(request, pk):
+    tape = get_object_or_404(Tape, pk=pk, user=request.user)
+    songs = tape.songs.filter(user=request.user)
+    if request.method == 'POST':
+        form = DeleteSongsForm(request.POST, queryset=songs)
+        if form.is_valid():
+            form.save()
+            return redirect('tape_detail', pk=tape.pk)
+    else:
+        form = DeleteSongsForm(queryset=songs)
     return render(request, 'tape/delete_songs_from_tape.html', {'form': form, 'tape': tape})
