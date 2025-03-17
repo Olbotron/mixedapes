@@ -8,8 +8,8 @@ def home(request):
     return render(request, 'tape/home.html')
 
 def tape_list(request):
-    tapes = Tape.objects.all()
-    return render(request, 'tape/tape_list.html', {'tape': tapes})
+    tape = Tape.objects.all()
+    return render(request, 'tape/tape_list.html', {'tape': tape})
 
 def tape_detail(request, pk):
     tape = get_object_or_404(Tape, pk=pk)
