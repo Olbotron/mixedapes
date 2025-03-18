@@ -139,9 +139,9 @@ WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
 # Use different database configurations for local and production environments
 """ if os.environ.get('DJANGO_ENV') == 'production': """
-    DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-    }
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
 """ else:
     DATABASES = {
         'default': {
