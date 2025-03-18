@@ -1,17 +1,16 @@
+<!-- filepath: /home/ol/Documents/Code-Institute/mixedapes/tape/templates/tape/add_song_to_tape.html -->
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Add Songs to {{ tape.title }}{% endblock %}
+{% block title %}Add Song to Tape{% endblock %}
 
 {% block content %}
-    <h1>Add Songs to {{ tape.title }}</h1>
+<div class="container">
+    <h1 class="py-2">Add Song to {{ tape.title }}</h1>
     <form method="post">
         {% csrf_token %}
-        {{ formset.management_form }}
-        {% for form in formset %}
-            {{ form.as_p }}
-        {% endfor %}
-        <button type="submit">Add Songs</button>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Add Song</button>
     </form>
-    <a href="{% url 'tape_detail' tape.pk %}">Back to Tape</a>
+</div>
 {% endblock %}

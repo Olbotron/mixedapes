@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Tape
 from song.models import Song
+from song.forms import DeleteSongsForm
 from .forms import TapeForm, AddSongForm, EditSongForm, DeleteSongsForm
 
 def home(request):
@@ -69,7 +70,7 @@ def add_song_to_tape(request, pk):
 
 @login_required
 def edit_song(request, pk):
-    song = get_object_or_404(Song, pk=pk, user=request.user)
+    song = get_object_or_404(Song, pk=pk)
     if request.method == 'POST':
         form = EditSongForm(request.POST, instance=song)
         if form.is_valid():
@@ -82,12 +83,11 @@ def edit_song(request, pk):
 @login_required
 def delete_songs_from_tape(request, pk):
     tape = get_object_or_404(Tape, pk=pk, user=request.user)
-    songs = tape.songs.filter(user=request.user)
     if request.method == 'POST':
-        form = DeleteSongsForm(request.POST, queryset=songs)
+        form = DeleteSongsForm(request.POST, tape=tape)
         if form.is_valid():
             form.save()
             return redirect('tape_detail', pk=tape.pk)
     else:
-        form = DeleteSongsForm(queryset=songs)
+        form = DeleteSongsForm(tape=tape)
     return render(request, 'tape/delete_songs_from_tape.html', {'form': form, 'tape': tape})

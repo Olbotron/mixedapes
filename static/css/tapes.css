@@ -10,6 +10,7 @@ em {
     font-size: 1.2rem;
     font-style: normal;
     color: #3e3e3e;
+    padding-bottom: 4px;
 }
 .toggle-content {
     display: none;
@@ -46,6 +47,10 @@ span.login-logout a:hover{
 
 ul li{
     padding: 12px;
+}
+
+a.padtop{
+    padding-top: 8px;
 }
 
 /* Set background color for odd and even <li> items */

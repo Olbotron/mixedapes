@@ -3,11 +3,11 @@ from tape.models import Tape  # Import the Tape model
 from .utils import get_album_art_url  # Import the get_album_art_url function
 
 class Song(models.Model):
-    title = models.CharField(max_length=100)
-    artist = models.CharField(max_length=100)
-    album = models.CharField(max_length=100, blank=True, null=True)
-    album_art_url = models.URLField(max_length=200, blank=True, null=True)
-    tape = models.ForeignKey(Tape, on_delete=models.CASCADE, related_name='songs')
+    title = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
+    album = models.CharField(max_length=255, blank=True, null=True)
+    album_art_url = models.URLField(blank=True, null=True)
+    tape = models.ForeignKey(Tape, related_name='songs', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
