@@ -8,15 +8,24 @@
 <div class="container">
     <h1 class="py-2">{{ tape.title }}</h1>
     <p>{{ tape.description }}</p>
-    <h2>Songs</h2>
-    <ul>
+    <h2>Songs</h2><br>
+    <ul class="song-list">
         {% for song in tape.songs.all %}
             <li>
                 <span class="song-div">
-                    <span class="album-art"><img src="{{ song.album_art_url }}" alt="{{ song.title }} album art" width="100" height="100"></span>
+                    <span class="album-art">
+                        {% if song.album_art_url != "https://example.com/default_album_art.jpg" %}
+                            <img src="{{ song.album_art_url }}" alt="{{ song.title }} album art" width="100" height="100">
+                        {% else %}
+                            <img src="{% static 'images/mixed-apes-logo.webp' %}" alt="{{ song.title }}" width="100" height="100">
+                        {% endif %}
+                    </span>
                     <span class="song-info">
                         <strong>{{ song.title }}</strong><br>
-                        <em>{{ song.artist }}</em>
+                        <em>{{ song.artist }}</em><br>
+                        {% if tape.user == request.user %}
+                            <a class="button-link" href="{% url 'edit_song' song.pk %}">Edit</a>
+                        {% endif %}
                     </span>
                 </span>
             </li>

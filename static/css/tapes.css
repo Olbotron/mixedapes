@@ -4,13 +4,13 @@ body {
 }
 strong {
     color: rgb(237, 159, 16);
-    font-size: 1.4rem;
+    font-size: 1.4em;
 }
 em {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-style: normal;
     color: #3e3e3e;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 .toggle-content {
     display: none;
@@ -45,7 +45,11 @@ span.login-logout a:hover{
     color:#e7aa0f;
 }
 
-ul li{
+ul.song-list{
+    list-style-type: decimal-leading-zero;
+    font-size: 1.8em;
+    font-weight: bold;
+    color:#3e3e3e;
     padding: 12px;
 }
 

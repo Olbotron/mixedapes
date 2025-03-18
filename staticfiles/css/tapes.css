@@ -2,15 +2,7 @@
 body {
     font-family: 'Ubuntu', sans-serif;
 }
-strong {
-    color: rgb(237, 159, 16);
-    font-size: 1.4rem;
-}
-em {
-    font-size: 1.2rem;
-    font-style: normal;
-    color: #3e3e3e;
-}
+
 .toggle-content {
     display: none;
 }
@@ -44,8 +36,44 @@ span.login-logout a:hover{
     color:#e7aa0f;
 }
 
-ul li{
-    padding: 12px;
+ul.tape-list{
+    list-style-type: none;
+    margin-left: -10px;
+}
+
+ul.tape-list li{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #c9c7c3;
+    border-radius: 5px;
+    background-color: #d1ceca;
+}
+
+ul.song-list{
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color:#3e3e3e;
+    padding-left: 0px;
+    margin-left: 0px;
+    padding-right: 12px;
+}
+
+ul.song-list strong {
+    color: rgb(237, 159, 16);
+    font-size: 1.4rem;
+}
+
+ul.song-list em {
+    font-size: 1rem;
+    font-style: normal;
+    color: #3e3e3e;
+    padding-bottom: 8px;
+}
+
+a.padtop{
+    padding-top: 8px;
 }
 
 /* Set background color for odd and even <li> items */
@@ -63,7 +91,7 @@ ul li:nth-child(even) {
 }
 
 .album-art{
-    display: block;
+    display: inline-block;
 }
 
 .song-info{
