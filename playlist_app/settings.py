@@ -38,7 +38,7 @@ LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after log
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['mixedapes-e0c1f0719094.herokuapp.com',
     '127.0.0.1', 
 ]
@@ -138,11 +138,13 @@ WSGI_APPLICATION = 'playlist_app.wsgi.application'
 }
 
 if os.environ.get('DJANGO_ENV') == 'production':
-    DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-}
-else: """
+"""
 DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
+"""
+else: 
+     DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': os.environ.get('DB_NAME', 'mixedapes_db'),
@@ -151,7 +153,7 @@ DATABASES = {
     'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
     'PORT': os.environ.get('DB_PORT', '5432'),
     }
-}
+} """
  
 
 AUTH_PASSWORD_VALIDATORS = [
