@@ -8,7 +8,7 @@
 <div class="container">
     <h1 class="py-2">Tape List</h1>
     <h2>Open a tape's title to view its songs</h2>
-    <br>
+    <a class="button-link" href="{% url 'tape_create' %}">Create New Tape</a><br><br>
     <ul class="tape-list">
         {% for tape in tapes %}
             <li>

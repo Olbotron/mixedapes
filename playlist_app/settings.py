@@ -79,11 +79,6 @@ ROOT_URLCONF = 'playlist_app.urls'
 
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-
 ## Simplified static file serving.
 ## https://warehouse.python.org/project/whitenoise/
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -138,25 +133,25 @@ ROOT_URLCONF = 'playlist_app.urls'
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
 # Use different database configurations for local and production environments
-DATABASES = {
+""" DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
-""" if os.environ.get('DJANGO_ENV') == 'production':
+if os.environ.get('DJANGO_ENV') == 'production':
     DATABASES = {
         'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
-else:
-    DATABASES = {
-        'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'mixedapes_db'),
-        'USER': os.environ.get('DB_USER', 'mixedapes_user'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'this_password'),
-        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+else: """
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': os.environ.get('DB_NAME', 'mixedapes_db'),
+    'USER': os.environ.get('DB_USER', 'mixedapes_user'),
+    'PASSWORD': os.environ.get('DB_PASSWORD', 'this_password'),
+    'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
+    'PORT': os.environ.get('DB_PORT', '5432'),
     }
-} """
+}
  
 
 AUTH_PASSWORD_VALIDATORS = [

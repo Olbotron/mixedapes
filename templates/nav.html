@@ -20,10 +20,11 @@
                     <span class="login-logout"><a href="{% url 'login' %}">Login</a> |
                     <a href="{% url 'register' %}">Register</a></span>
                 {% endif %}
-            <a href="{% url 'home' %}" class="nav-item nav-link <?=isActive(1)?>">Home</a>
-            <a href="#" class="nav-item nav-link <?=isActive(2)?>">About</a>
-            <a href="/tapes" class="nav-item nav-link <?=isActive(3)?>">Playlists</a>
-            <a href="#" class="nav-item nav-link <?=isActive(4)?>"></a>
+            <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
+            <a href="#" class="nav-item nav-link">About</a>
+            <a href="/tapes" class="nav-item nav-link">Playlists</a>
+            <!--
+            SOCIAL APP FUTURE FEATURE
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Socialise</a>
                 <div class="dropdown-menu m-0">
@@ -31,6 +32,7 @@
                     <a href="#" class="dropdown-item <?=isActive(6)?>">Dating</a>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </nav>

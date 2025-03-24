@@ -300,10 +300,14 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
 }
 
 .button-link{
+    display: inline-block;
     font-weight: bold;
     background-color: #0F172B;
     color: #efe8d8;
     padding: 8px;
+    margin-right: 14px;
+    margin-top: 16px;
+    text-wrap: nowrap;
     border-radius: 4px;
     text-decoration: none;
 }
