@@ -261,6 +261,9 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     display: none;
 }
 
+.hide-me{
+    display: none;
+}
 
 /*** Service ***/
 .service-item {
