@@ -133,18 +133,13 @@ ROOT_URLCONF = 'playlist_app.urls'
 WSGI_APPLICATION = 'playlist_app.wsgi.application'
 
 # Use different database configurations for local and production environments
-""" DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-}
 
-if os.environ.get('DJANGO_ENV') == 'production':
-"""
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
-"""
-else: 
-     DATABASES = {
+
+
+""" DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': os.environ.get('DB_NAME', 'mixedapes_db'),
@@ -153,7 +148,8 @@ else:
     'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
     'PORT': os.environ.get('DB_PORT', '5432'),
     }
-} """
+}  """
+
  
 
 AUTH_PASSWORD_VALIDATORS = [

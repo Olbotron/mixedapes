@@ -1,20 +1,8 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %} 
-<!doctype html>
-<html lang="en">
-  <head>
-      <title>Mixed Apes : Log In</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    </head>
-    <body>
+{% block content %}
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -33,7 +21,6 @@
                   			<h3>Log In</h3>
                   		</div>
                   	</div>
-                        {% block content %}
                         
                         <form class="signin-form" method="post">
                             {% csrf_token %}
@@ -42,21 +29,15 @@
                             {{ form.password|as_crispy_field }}
                             <button type="submit">Sign In</button>
                         </form>
-
-                        {% endblock %}
                         
-                  <p class="text-center">Not a member? <a href="{% url 'register' %}">Sign Up</a></p>
+                  <p class="text-center">Not a member? <a href="{% url 'register' %}">Sign Up</a>
+                     or <a href="{% url 'home' %}">Back Home</a>
+                  </p>
                 </div>
               </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/popper.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
-
-    </body>
-</html>
+    {% endblock %}
+    
