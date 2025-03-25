@@ -4,10 +4,10 @@ body {
 }
 strong {
     color: rgb(237, 159, 16);
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 em {
-    font-size: 1.2em;
+    font-size: 1em;
     font-style: normal;
     color: #3e3e3e;
     padding-bottom: 8px;
@@ -45,9 +45,17 @@ span.login-logout a:hover{
     color:#e7aa0f;
 }
 
+ul.tape-list{
+    list-style-type: none;
+    margin: 4px;
+    padding: 8px;
+    border: #3e3e3e solid 1px;
+}
+
 ul.song-list{
     list-style-type: decimal-leading-zero;
-    font-size: 1.8em;
+    list-style-position: inside;
+    font-size: 1.4em;
     font-weight: bold;
     color:#3e3e3e;
     padding: 12px;
@@ -57,13 +65,17 @@ a.padtop{
     padding-top: 8px;
 }
 
+ul li{
+    padding: 8px;
+}
+
 /* Set background color for odd and even <li> items */
 ul li:nth-child(odd) {
-    background-color: #fcf9f5; /* Color for odd items */
+    background-color: #ffffff; /* Color for odd items */
 }
 
 ul li:nth-child(even) {
-    background-color: #efe8d8; /* Color for even items */
+    background-color: #eeeeee; /* Color for even items */
 }
 
 .song-div{
@@ -169,7 +181,7 @@ img.logo{
 }
 
 /*** Navbar ***/
-navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
+.navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     background-color: #000000;
 }
 
@@ -178,7 +190,7 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    font-size: 15px;
+    font-size: 1em;
     color: var(--light) !important;
     text-transform: uppercase;
     font-weight: 500;
@@ -295,7 +307,11 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     color: #efe8d8;
     padding: 8px;
     border-radius: 4px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
     text-decoration: none;
+    text-wrap: nowrap;
 }
 
 .button-link:hover, .button-link:focus, .button-link:active{

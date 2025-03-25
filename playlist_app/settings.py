@@ -36,7 +36,7 @@ LOGIN_REDIRECT_URL = '/users/profile/'  # Redirect to the profile page after log
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the home page after logout
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'SECRET_KEY')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['mixedapes-e0c1f0719094.herokuapp.com',
     '127.0.0.1', 
 ]
@@ -89,46 +89,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://kit.fontawesome.com",
 ]
 
-# Crispy Forms settings
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'crispy_forms',
-    'crispy_bootstrap4',  # Add crispy_bootstrap4 for forms
-    'tape',
-    'song',
-    'user',
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
-
-ROOT_URLCONF = 'playlist_app.urls'
-
-WSGI_APPLICATION = 'playlist_app.wsgi.application'
-
 # Use different database configurations for local and production environments
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-}
-
-
 """ DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+} """
+
+DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': os.environ.get('DB_NAME', 'mixedapes_db'),
@@ -137,9 +104,7 @@ DATABASES = {
     'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
     'PORT': os.environ.get('DB_PORT', '5432'),
     }
-}  """
-
- 
+} 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
