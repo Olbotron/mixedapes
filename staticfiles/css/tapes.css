@@ -2,7 +2,16 @@
 body {
     font-family: 'Ubuntu', sans-serif;
 }
-
+strong {
+    color: rgb(237, 159, 16);
+    font-size: 1.4em;
+}
+em {
+    font-size: 1.2em;
+    font-style: normal;
+    color: #3e3e3e;
+    padding-bottom: 8px;
+}
 .toggle-content {
     display: none;
 }
@@ -36,40 +45,12 @@ span.login-logout a:hover{
     color:#e7aa0f;
 }
 
-ul.tape-list{
-    list-style-type: none;
-    margin-left: -10px;
-}
-
-ul.tape-list li{
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #c9c7c3;
-    border-radius: 5px;
-    background-color: #d1ceca;
-}
-
 ul.song-list{
     list-style-type: decimal-leading-zero;
-    list-style-position: inside;
-    font-size: 1.4rem;
+    font-size: 1.8em;
     font-weight: bold;
     color:#3e3e3e;
-    padding-left: 0px;
-    margin-left: 0px;
-    padding-right: 12px;
-}
-
-ul.song-list strong {
-    color: rgb(237, 159, 16);
-    font-size: 1.4rem;
-}
-
-ul.song-list em {
-    font-size: 1rem;
-    font-style: normal;
-    color: #3e3e3e;
-    padding-bottom: 8px;
+    padding: 12px;
 }
 
 a.padtop{
@@ -91,7 +72,7 @@ ul li:nth-child(even) {
 }
 
 .album-art{
-    display: inline-block;
+    display: block;
 }
 
 .song-info{
@@ -280,6 +261,9 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     display: none;
 }
 
+.hide-me{
+    display: none;
+}
 
 /*** Service ***/
 .service-item {
@@ -300,14 +284,10 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
 }
 
 .button-link{
-    display: inline-block;
     font-weight: bold;
     background-color: #0F172B;
     color: #efe8d8;
     padding: 8px;
-    margin-right: 14px;
-    margin-top: 16px;
-    text-wrap: nowrap;
     border-radius: 4px;
     text-decoration: none;
 }
