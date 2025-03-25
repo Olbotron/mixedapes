@@ -262,7 +262,7 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
 }
 
 .hide-me{
-    display: none;
+    visibility: hidden;
 }
 
 /*** Service ***/
