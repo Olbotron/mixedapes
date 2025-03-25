@@ -181,13 +181,12 @@ the same information if the code it supplied the first time didn't solve an erro
 
 |Page|Feature|Action|Effect|
 |---|---|---|---|
-|Homepage|Site Logo|Click|Redirects to home page from all pages|
-|Homepage|Logged In User Display|Log in as existing user|Username appears in navbar|
-|Homepage|Home link|Click|Redirects to home page from all pages|
-|Homepage|Logout link|Click|Redirects to confirm signout page|
-|Homepage|Confirm logout|Click 'ok'|Redirects to home page|
-|Homepage|Login link|Click|Redirects to Sign In Page|
-|Homepage|Register link|Click|Redirects to Sign Up Page|
+|Header|Site Logo|Click|Redirects to home page from all pages|
+|Header|Logged In User Display|Log in as existing user|Username appears in navbar|
+|Header|Login link|Click|Redirects to Sign In Page|
+|Header|Register link|Click|Redirects to Sign Up Page|
+|Header|Logout link|Click|Redirects to home page with user signed out|
+
 |Homepage|All Loops Button|Click|All loops displayed on homepage|
 |Homepage|My Loops Button|Not logged in|Button is disabled|
 |Homepage|My Loops Button|Logged in : click|Only user's loops are displayed|
