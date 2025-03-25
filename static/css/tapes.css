@@ -261,6 +261,12 @@ navbar, .navbar-expand-lg, .navbar-black, .px-4, .px-lg-5, .py-3, .py-lg-0{
     display: none;
 }
 
+#back-to-top{
+    background-color: rgb(221, 60, 1);
+    word-wrap: nowrap;
+    text-wrap: nowrap;
+}
+
 .hide-me{
     visibility: hidden;
 }
