@@ -161,11 +161,11 @@ the same information if the code it supplied the first time didn't solve an erro
 
 3. Use AI tools to optimise code for performance and user experience.
 
-
+*I used the online W3C online checker to make sure the code was fully optimised.*
 
 4. Use AI tools to create automated tests
 
-
+*I used the lighthouse Developer tools on Chrome to check the site's compliance to accessibility and speed.*
 
 5. Reflect on AI's role in the development process and impact on workflow.
 
@@ -262,5 +262,5 @@ the same information if the code it supplied the first time didn't solve an erro
 ---
 
 [1]: https://github.com/users/Olbotron/projects/7
-[2]: https://github.com/static/images/lighthouse-check.png
-[3]: https://github.com/static/images/HTML-checker.png
+[2]: https://github.com/Olbotron/mixedapes/static/images/lighthouse-check.png
+[3]: https://github.com/Olbotron/mixedapes/static/images/HTML-checker.png
