@@ -262,5 +262,5 @@ the same information if the code it supplied the first time didn't solve an erro
 ---
 
 [1]: https://github.com/users/Olbotron/projects/7
-[2]: https://github.com/users/Olbotron/mixedapes/static/images/lighthouse-check.png
-[3]: https://github.com/users/Olbotron/mixedapes/static/images/HTML-checker.png
+[2]: https://github.com/Olbotron/mixedapes/blob/main/static/images/lighthouse-check.png
+[3]: https://github.com/Olbotron/mixedapes/blob/main/static/images/HTML-checker.png
