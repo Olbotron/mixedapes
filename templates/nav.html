@@ -1,9 +1,9 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-black px-4 px-lg-5 py-3 py-lg-0">
-    <a href="" class="navbar-brand p-0">
-        <h1 class="text-primary m-0"><img src="{% static 'images/mixed-apes-logo.webp' %}" class="header-tape" alt="Cassette"> Mixed Apes</h1>
-    </a>
+    <a href="{% url 'home' %}" class="navbar-brand p-0"><img src="{% static 'images/mixed-apes-logo.webp' %}" class="header-tape" alt="Cassette"></a>
+        <h1 class="text-primary m-0"> Mixed Apes</h1>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
     </button>
